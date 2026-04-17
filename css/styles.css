@@ -74,7 +74,7 @@ a {
 
 .header-link {
     display: inline-block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover, .header-link:focus {
@@ -207,6 +207,7 @@ a {
     text-align: center;
     color: #fff;
     margin-bottom: 72px;
+    max-width: 216px;
 }
 
 .hero-button {
@@ -255,6 +256,7 @@ a {
     font-size: 36px;
     color: #2e2f42;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .features-text {
@@ -375,12 +377,7 @@ a {
 }
 
 .portfolio-card-content {
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-card-content:hover, .portfolio-card-content:focus {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-    background: #fff;
 }
 
 .portfolio-img-wrapper {
@@ -505,7 +502,7 @@ a {
 .subscribe-form {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
     flex-direction: column;
     justify-content: center;
 }
@@ -566,7 +563,7 @@ a {
     margin-left: 16px;
 }
 
-.backdrop {
+.backdrop, .mob-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -578,7 +575,7 @@ a {
     pointer-events: none;
 }
 
-.backdrop.is-open {
+.backdrop.is-open, .mob-backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -802,12 +799,6 @@ a {
     /* border: 1px solid black; */
 }
 
-.mob-menu.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
 .close-button-mob {
     position: relative;
     margin-left: auto;
@@ -866,8 +857,8 @@ a {
     color: #4d5ae5;
 }
 
-.menu-social-list{
-    display: flex;    
+.menu-social-list {
+    display: flex;
     max-height: 40px;
     justify-content: space-between;
 }
@@ -907,6 +898,10 @@ a {
 
     .features-list {
         gap: 72px 24px;
+    }
+
+    .feature-title {
+        text-align: left;
     }
 
     .features-item {
@@ -955,6 +950,7 @@ a {
     .subscribe-form {
         flex-direction: row;
         justify-content: start;
+        gap: 24px;
     }
 
     .nav-list {
@@ -968,18 +964,30 @@ a {
     .address-list {
         display: flex;
         flex-direction: column;
-        gap: 0;
-        justify-content: center;
+        gap: 14px;
+    }
+
+    .address-item {
+        display: flex;
+        align-items: center;
+        height: 14px;
     }
 
     .header-link {
         font-size: 12px;
         line-height: 1.17;
+        letter-spacing: 0.04em;
     }
 
     .modal {
         padding: 72px 24px 24px 24px;
         width: 408px;
+    }
+
+    .mob-backdrop.is-open {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 }
 
@@ -992,6 +1000,12 @@ a {
 
     .section {
         padding-block: 120px;
+    }
+
+    .header-link {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
     }
 
     .hero {
@@ -1050,6 +1064,16 @@ a {
 
     .portfolio-item {
         flex-basis: calc((100% - 48px)/3);
+    }
+
+    .portfolio-card-content {
+        box-shadow: none;
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-card-content:hover, .portfolio-card-content:focus {
+        box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+        background: #fff;
     }
 
     .footer-container {
