@@ -51,7 +51,7 @@ ul, ol {
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }
 
 a {
@@ -790,13 +790,9 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: #fff;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
     padding: 24px 24px 40px 16px;
-    /* border: 1px solid black; */
 }
 
 .close-button-mob {
@@ -964,13 +960,12 @@ a {
     .address-list {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
     }
 
     .address-item {
         display: flex;
         align-items: center;
-        height: 14px;
     }
 
     .header-link {
